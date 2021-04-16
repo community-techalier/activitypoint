@@ -1,3 +1,4 @@
+<?php
 <!DOCTYPE html>
 <html>
 
@@ -126,8 +127,8 @@
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
               <h1 class="text-white">Create an account</h1>
-              <p class="text-lead text-white">Use these awesome forms to login or create new account in your project for
-                free.</p>e a
+              <p class="text-lead text-white">Use theswesome forms to login or create new account in your project for
+                free.</p>
             </div>
           </div>
         </div>
@@ -231,3 +232,4 @@
 </body>
 
 </html>
+?>
