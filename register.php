@@ -1,11 +1,13 @@
+<?php
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Activity Point Dashboard - Login</title>
+  <title>Activity Point Dashboard - Register</title>
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="120x120" href="/dashboard/assets/img/favicon/tcfavicon.png">
@@ -32,9 +34,10 @@
 <body class="bg-white">
   <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
     <div class="container">
-      <img src="/assets/img/brand/TechalierWhiteT.png" height="35" alt="Logo Impact">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"
-        aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="/dashboard/../index.html">
+        <img src="/assets/img/brand/TechalierWhiteT.png" height="35" alt="Logo Impact">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
@@ -44,8 +47,7 @@
               <img src="/assets/img/brand/techalier-community.png" height="50" alt="Logo Impact">
             </div>
             <div class="col-6 collapse-close">
-              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse"
-                aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
               </button>
@@ -78,15 +80,13 @@
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
               <h1 class="text-white">Create an account</h1>
-              <p class="text-lead text-white">Use these awesome forms to login or create new account in your project for
-                free.</p>
+              <p class="text-lead text-white">Use these awesome forms to login or create new account in your project for free.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="separator separator-bottom separator-skew zindex-100">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
-          xmlns="http://www.w3.org/2000/svg">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
         </svg>
       </div>
@@ -98,13 +98,30 @@
         <div class="col-lg-6 col-md-8">
           <div class="card bg-secondary border border-soft">
             <div class="card-body px-lg-5 py-lg-5">
-              <form role="form" method="POST">
+              <form role="form">
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Name" type="text">
+                  </div>
+                </div>
+                
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                     </div>
                     <input class="form-control" placeholder="USN" type="text" name="usn" id="usn" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Email" type="email">
                   </div>
                 </div>
                 <div class="form-group">
@@ -116,18 +133,19 @@
                       required>
                   </div>
                 </div>
-                <div class="row my-4">
-                  <div class="col-6 text-left">
-                    <small><span class="text-muted ">Didn't register yet? <br><a href="/register.html">Register
-                          here</a></span></small>
-                  </div>
-                  <div class="col-6 text-right">
-                    <small><span class="text-muted ">Forgot Password? <br><a href="/reset.html">Reset
-                          Password</a></span></small>
+                
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Confirm Password" type="password" name="credenconf" id="credenconf"
+                      required>
                   </div>
                 </div>
+                <div class="text-muted font-italic"><small>password strength: <span class="text-success font-weight-700">strong</span></small></div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary mt-4">Sign In</button>
+                  <button type="button" class="btn btn-primary mt-4">Create account</button>
                 </div>
               </form>
             </div>
@@ -163,3 +181,4 @@
 </body>
 
 </html>
+?>
