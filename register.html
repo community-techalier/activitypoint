@@ -30,6 +30,7 @@
 </head>
 
 
+
 <body class="bg-white">
   <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
     <div class="container">
@@ -97,7 +98,7 @@
         <div class="col-lg-6 col-md-8">
           <div class="card bg-secondary border border-soft">
             <div class="card-body px-lg-5 py-lg-5">
-              <form action="register12.php" method="POST">
+              <form action="register12.php" method="POST" onsubmit="return checkPassword(this)">
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
                     <div class="input-group-prepend">
@@ -177,6 +178,21 @@
   <script src="/dashboard/assets/js/dashboard.js?v=1.2.0"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="/dashboard/assets/js/demo.min.js"></script>
+  <script type="text/javascript">
+    function checkPassword(form) {  
+      var password1=form.creden.value;
+      var password2=form.credencnfm.value;
+      
+      if(password1!=password2)
+      {
+        alert("Password  did not matched");
+      }
+      else{
+        alert("Password matched");
+      }
+    
+    }
+  </script>
 </body>
 
 </html>

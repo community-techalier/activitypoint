@@ -11,7 +11,7 @@ if($conn->connect_error){
 
 
 }
-else if($creden == $credencnmf){
+else{
               $sql = "INSERT INTO activcheckt (namec, email, usn, creden, credencnfm)
           VALUES ('$name','$email', '$usn', '$creden','$credencnmf')";
 
@@ -21,9 +21,7 @@ else if($creden == $credencnmf){
             echo "Error: " . $sql . "<br>" . $conn->error;
           }
               }
-        else{
-            
-        }
+        
 $conn->close();
 
 ?>
