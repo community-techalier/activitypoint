@@ -29,7 +29,7 @@ else if($creden==$credencnmf)
           }
  }
 else{
-     header("register.php");
+     header("location: register.html");
 
    }
         
