@@ -1,6 +1,6 @@
 <?php
    include("log1.php");
-   session_start();
+   
    
    $user_check = $_SESSION['login_user'];
    

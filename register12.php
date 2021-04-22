@@ -1,4 +1,5 @@
 <?php
+
 $name = $_POST["namec"];
 $email = $_POST["email"];
 $usn = $_POST['usn'];
@@ -11,16 +12,26 @@ if($conn->connect_error){
 
 
 }
-else{
+else if($creden==$credencnmf)
+{
+  
               $sql = "INSERT INTO activcheckt (namec, email, usn, creden, credencnfm)
           VALUES ('$name','$email', '$usn', '$creden','$credencnmf')";
 
           if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
-          } else {
+              
+            header("location: login.php");
+            
+
+          } else
+           {
             echo "Error: " . $sql . "<br>" . $conn->error;
           }
-              }
+ }
+else{
+     header("register.php");
+
+   }
         
 $conn->close();
 

@@ -1,7 +1,8 @@
 <?php
    include('session.php');
+   include('dashboard.php');
 ?>
-<html">
+<!-- <html">
    
    <head>
       <title>Welcome </title>
@@ -12,4 +13,4 @@
       <h2><a href = "logout.php">Sign Out</a></h2>
    </body>
    
-</html>
+</html> -->

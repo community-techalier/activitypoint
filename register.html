@@ -185,7 +185,11 @@
       
       if(password1!=password2)
       {
-        alert("Password  did not matched");
+        if (window.confirm('Password did not match click "ok" you would be redirected . Cancel will load this website ')) 
+{
+window.location.href='register.html';
+};
+        
       }
       else{
         alert("Password matched");
