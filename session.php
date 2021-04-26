@@ -5,6 +5,8 @@
    $user_check = $_SESSION['login_user'];
    
    $ses_sql = mysqli_query($db,"SELECT usn from activcheckt where usn = '$user_check' ");
+   $fetchi = mysqli_query($db,"SELECT * from activcheckt where usn='$user_check'");
+   
    
    $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
    
