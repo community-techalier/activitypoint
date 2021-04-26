@@ -17,7 +17,7 @@
       $sql = "SELECT usn FROM activcheckt WHERE usn = '$myusername' and creden = '$mypassword'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-      $active = $row['active'];
+      // $active = $row['active'];
       
       $count = mysqli_num_rows($result);
       
@@ -29,6 +29,8 @@
          header("location: welcome.php");
       }else {
          $error = "Your Login Name or Password is invalid";
+         header("location: loginerr.php");
+         
       }
    }
 ?>

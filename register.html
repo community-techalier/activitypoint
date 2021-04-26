@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="/dashboard/assets/vendor/sweetalert2/dist/sweetalert2.min.css">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="/dashboard/css/dashboard.css" type="text/css">
+  <link rel="stylesheet" href="/dashboard/css/password.css" type="text/css">
+  
 </head>
 
 
@@ -121,7 +123,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input class="form-control" name="email" placeholder="Email" type="email">
+                    <input class="form-control" name="email" placeholder="Email" id="email" type="email" onclick="validateEmail(this);">
                   </div>
                 </div>
                 <div class="form-group">
@@ -131,6 +133,12 @@
                     </div>
                     <input class="form-control" placeholder="Password" type="password" name="creden" id="creden"
                       required>
+                      <div id="meter_wrapper">
+                        <div id="meter"></div>
+                       </div>
+                       <br>
+                       
+                       <span id="pass_type"></span>
                   </div>
                 </div>
                 
@@ -139,11 +147,11 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Confirm Password" type="password" name="credencnfm" id="credencnfm"
+                    <input class="form-control" placeholder="Confirm Password" type="password" name="credencnfm" id="credencnfm" 
                       required>
+                      
                   </div>
                 </div>
-                <div class="text-muted font-italic"><small>password strength: <span class="text-success font-weight-700">strong</span></small></div>
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary mt-4">Create account</button>
                 </div>
@@ -195,6 +203,8 @@
     
     }
   </script>
+  <script src="meterjs.js"></script>
+    <script src="email.js"></script>
 </body>
 
 </html>

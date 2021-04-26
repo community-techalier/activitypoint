@@ -68,10 +68,12 @@
           </div>
           <!-- Card stats -->
           <div class="row">
-          <?php
-    while($roww=mysqli_fetch_assoc($fetchi))
-    {
-       ?>
+           <?php
+           while($roww=mysqli_fetch_assoc($fetchlogin))
+           {
+             $rowtotal = mysqli_fetch_assoc($fetchtotal);
+
+           ?>
             
             <div class="col-xl-3 col-md-6">
               <div class="card card-stats">
@@ -88,9 +90,7 @@
                   </p>
                 </div>
               </div>
-              <?php
-    }
-    ?>
+            
             </div>
             <div class="col-xl-3 col-md-6">
               
@@ -101,7 +101,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Points Recieved</h5>
-                      <span class="h2 font-weight-bold mb-0">35</span>
+                      <span class="h2 font-weight-bold mb-0"><?php echo $rowtotal['total']; ?></span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -110,7 +110,7 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 35%</span>
+                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> <?php echo $rowtotal['total']; ?> %</span>
                     <span class="text-nowrap">Till Now</span>
                   </p>
                 </div>
@@ -123,7 +123,9 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Points yet to recieve</h5>
-                      <span class="h2 font-weight-bold mb-0">23</span>
+                      <span class="h2 font-weight-bold mb-0"><?php 
+                      $rem = 100-$rowtotal['total'];
+                      echo $rem; ?></span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -132,7 +134,9 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 23%</span>
+                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> <?php 
+                      $rem = 100-$rowtotal['total'];
+                      echo $rem; ?> % </span>
                     <span class="text-nowrap">By End of Course</span>
                   </p>
                 </div>
@@ -160,12 +164,19 @@
                 </div>
               </div>
             </div>
+            <?php
+           }
+           ?>
           </div>
         </div>
       </div>
     </div>
     <!-- Page content -->
     <div class="container-fluid mt--6">
+    <?php
+     while($rowdata=mysqli_fetch_assoc($fetchdata))
+     {
+      ?>
       <div class="row">
         <div class="col-xl-12">
           <div class="card">
@@ -188,6 +199,59 @@
                 <tbody>
                   <tr>
                     <th scope="row">
+                    Cyclathon
+                    </th>
+                    <td>
+                    <?php echo $rowdata['Cyclathon']; ?>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                    Women's Day Walkathon
+
+                    </th>
+                    <td>
+                    <?php echo $rowdata['Womens Day Walkathon']; ?>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                    Mobile Schools
+
+                    </th>
+                    <td>
+                    <?php echo $rowdata['Mobile Schools']; ?>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                    Clean Drive
+
+                    </th>
+                    <td>
+                    <?php echo $rowdata['Clean Drive']; ?>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                    Clean Drive Basavangudi
+
+                    </th>
+                    <td>
+                    <?php echo $rowdata['Clean Drive Basavangudi']; ?>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                    Plog Run
+
+                    </th>
+                    <td>
+                    <?php echo $rowdata['Plog run']; ?>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
                       NSS Plog run
                     </th>
                     <td>
@@ -210,54 +274,10 @@
                       20
                     </td>
                   </tr>
-                  <tr>
-                    <th scope="row">
-                      NSS Plog run
-                    </th>
-                    <td>
-                      20
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Rotract iTeach
-                    </th>
-                    <td>
-                      20
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Team Hasiru Clean-a-thon
-                    </th>
-                    <td>
-                      20
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      NSS Plog run
-                    </th>
-                    <td>
-                      20
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Rotract iTeach
-                    </th>
-                    <td>
-                      20
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Team Hasiru Clean-a-thon
-                    </th>
-                    <td>
-                      20
-                    </td>
-                  </tr>
+                  <?php
+     }
+     ?>
+
                 </tbody>
               </table>
             </div>
