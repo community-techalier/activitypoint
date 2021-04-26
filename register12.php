@@ -6,7 +6,7 @@ $usn = $_POST['usn'];
 $creden = $_POST['creden'];
 $credencnmf = $_POST['credencnfm'];
 
-$conn = new mysqli('localhost','root','','activnew');
+$conn = new mysqli('localhost','phpedits','WinactPoint@2021','activnew');
 if($conn->connect_error){
     die('connection FAiled : '.$conn->connect_error);
 

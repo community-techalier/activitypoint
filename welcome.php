@@ -15,21 +15,21 @@
   <link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/favicon/tcfavicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon/tcfavicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon/tcfavicon.png">
-  <link rel="manifest" href="../dashboard/assets/img/favicon/tcfavicon.png">
-  <link rel="mask-icon" href="../dashboard/assets/img/favicon/tcfavicon.png" color="#ffffff">
+  <link rel="manifest" href="/dashboard/assets/img/favicon/tcfavicon.png">
+  <link rel="mask-icon" href="/dashboard/assets/img/favicon/tcfavicon.png" color="#ffffff">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
-  <link rel="stylesheet" href="../../assets/vendor/nucleo/css/nucleo.css" type="text/css">
-  <link rel="stylesheet" href="../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <link rel="stylesheet" href="/dashboard/assets/vendor/nucleo/css/nucleo.css" type="text/css">
+  <link rel="stylesheet" href="/dashboard/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
   <!-- Page plugins -->
-  <link rel="stylesheet" href="../../assets/vendor/fullcalendar/dist/fullcalendar.min.css">
-  <link rel="stylesheet" href="../../assets/vendor/sweetalert2/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="/dashboard/assets/vendor/fullcalendar/dist/fullcalendar.min.css">
+  <link rel="stylesheet" href="/dashboard/assets/vendor/sweetalert2/dist/sweetalert2.min.css">
   <!-- Argon CSS -->
-  <link rel="stylesheet" href="../../css/dashboard.css" type="text/css">
+  <link rel="stylesheet" href="/dashboard/css/dashboard.css" type="text/css">
 
 </head>
 
@@ -211,7 +211,7 @@
 
                     </th>
                     <td>
-                    <?php echo $rowdata['Womens Day Walkathon']; ?>
+                    <?php echo $rowdata['Womens_Day_Walkathon']; ?>
                     </td>
                   </tr>
                   <tr>
@@ -220,7 +220,7 @@
 
                     </th>
                     <td>
-                    <?php echo $rowdata['Mobile Schools']; ?>
+                    <?php echo $rowdata['Mobile_Schools']; ?>
                     </td>
                   </tr>
                   <tr>
@@ -229,7 +229,7 @@
 
                     </th>
                     <td>
-                    <?php echo $rowdata['Clean Drive']; ?>
+                    <?php echo $rowdata['Clean_Drive']; ?>
                     </td>
                   </tr>
                   <tr>
@@ -238,7 +238,7 @@
 
                     </th>
                     <td>
-                    <?php echo $rowdata['Clean Drive Basavangudi']; ?>
+                    <?php echo $rowdata['Clean_Drive_Basavangudi']; ?>
                     </td>
                   </tr>
                   <tr>
@@ -247,7 +247,7 @@
 
                     </th>
                     <td>
-                    <?php echo $rowdata['Plog run']; ?>
+                    <?php echo $rowdata['Plog_run']; ?>
                     </td>
                   </tr>
                   <tr>
@@ -255,7 +255,7 @@
                       NSS Plog run
                     </th>
                     <td>
-                      20
+                      <?php echo $rowdata['NSS_Plog_run']; ?>
                     </td>
                   </tr>
                   <tr>
@@ -263,7 +263,7 @@
                       Rotract iTeach
                     </th>
                     <td>
-                      20
+                      <?php echo $rowdata['Rotract_iTeach']; ?>
                     </td>
                   </tr>
                   <tr>
@@ -271,7 +271,7 @@
                       Team Hasiru Clean-a-thon
                     </th>
                     <td>
-                      20
+                      <?php echo $rowdata['Team_Hasiru_Cleanathon']; ?>
                     </td>
                   </tr>
                   <?php
@@ -298,18 +298,18 @@
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
-  <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../../assets/vendor/js-cookie/js.cookie.js"></script>
-  <script src="../../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-  <script src="../../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+  <script src="/dashboard/assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/dashboard/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/dashboard/assets/vendor/js-cookie/js.cookie.js"></script>
+  <script src="/dashboard/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="/dashboard/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
   <!-- Optional JS -->
-  <script src="../../assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="../../assets/vendor/chart.js/dist/Chart.extension.js"></script>
+  <script src="/dashboard/assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="/dashboard/assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
-  <script src="../../assets/js/dashboard.js?v=1.2.0"></script>
+  <script src="/dashboard/assets/js/dashboard.js?v=1.2.0"></script>
   <!-- Demo JS - remove this in your project -->
-  <script src="../../assets/js/demo.min.js"></script>
+  <script src="/dashboard/assets/js/demo.min.js"></script>
 </body>
 
 </html>

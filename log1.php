@@ -1,8 +1,8 @@
 <?php
 
    define('DB_SERVER', 'localhost');
-   define('DB_USERNAME', 'root');
-   define('DB_PASSWORD', '');
+   define('DB_USERNAME', 'phpedits');
+   define('DB_PASSWORD', 'WinactPoint@2021');
    define('DB_DATABASE', 'activnew');
    $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
