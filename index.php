@@ -246,7 +246,7 @@ if(isset($_POST["register"]))
         <div class="col-lg-6 col-md-8">
           <div class="card bg-secondary border border-soft">
             <div class="card-body px-lg-5 py-lg-5">
-              <form autocomplete="off" action="register12.php" method="POST" onsubmit="return checkPassword(this)">
+              <form autocomplete="off" method="POST" onsubmit="return checkPassword(this)">
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
                     <div class="input-group-prepend">
