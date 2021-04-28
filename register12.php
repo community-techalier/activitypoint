@@ -17,12 +17,8 @@ else if($creden==$credencnmf)
   
               $sql = "INSERT INTO activcheckt (namec, email, usn, creden, credencnfm)
           VALUES ('$name','$email', '$usn', '$creden','$credencnmf')";
-
           if ($conn->query($sql) === TRUE) {
-              
             header("location: login.php");
-            
-
           } else
            {
             echo "Error: " . $sql . "<br>" . $conn->error;
@@ -30,7 +26,6 @@ else if($creden==$credencnmf)
  }
 else{
      header("location: register.html");
-
    }
         
 $conn->close();
