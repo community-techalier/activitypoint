@@ -1,3 +1,145 @@
+<?php
+
+session_start();
+
+if(isset($_SESSION["user_id"]))
+{
+	header("location:home.php");
+}
+
+include('function.php');
+
+$connect = new mysqli('localhost','phpedits','WinactPoint@2021','activnew');
+
+$message = '';
+$error_usn = '';
+$error_email = '';
+$error_creden = '';
+$usn = '';
+$namec = '';
+$email = '';
+$creden = '';
+$credencnfm = '';
+
+if(isset($_POST["register"]))
+{
+	if(empty($_POST["usn"]))
+	{
+		$error_usn = "<label class='text-danger'>Enter Name</label>";
+	}
+	else
+	{
+		$usn = trim($_POST["usn"]);
+		$usn = htmlentities($usn);
+	}
+
+	if(empty($_POST["email"]))
+	{
+		$error_email = '<label class="text-danger">Enter Email Address</label>';
+	}
+	else
+	{
+		$email = trim($_POST["email"]);
+		if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+		{
+			$error_email = '<label class="text-danger">Enter Valid Email Address</label>';
+		}
+	}
+
+	if(empty($_POST["creden"]))
+	{
+		$error_creden = '<label class="text-danger">Enter Password</label>';
+	}
+	else
+	{
+		$creden = trim($_POST["creden"]);
+		$creden = password_hash($creden, PASSWORD_DEFAULT);
+	}
+
+	if($error_usn == '' && $error_email == '' && $error_creden == '')
+	{
+		$user_activation_code = md5(rand());
+
+		$user_otp = rand(100000, 999999);
+
+		$data = array(
+			':namec' => $namec,
+			':usn'		=>	$usn,
+			':email'		=>	$email,
+			':creden'	=>	$creden,
+			':credencnfm' => $credencnfm,
+			':user_activation_code' => $user_activation_code,
+			':email_status'=>	'not verified',
+			':user_otp'			=>	$user_otp
+		);
+
+		$query = "INSERT INTO activcheckt (namec, usn, email, creden, credencnfm, user_activation_code, email_status, user_otp)
+		SELECT * FROM (SELECT :namec, :usn, :email, :creden, :credencnfm, :user_activation_code, :email_status, :user_otp) AS tmp
+		WHERE NOT EXISTS (
+		    SELECT usn FROM activcheckt WHERE usn = :usn
+		) LIMIT 1
+		";
+
+		$statement = $connect->prepare($query);
+
+		$statement->execute($data);
+
+		if($connect->lastInsertId() == 0)
+		{
+			$message = '<label class="text-danger">USN Already Register</label>';
+		}	
+		else
+		{
+			$user_avatar = make_avatar(strtoupper($usn[0]));
+
+			$query = "UPDATE activcheckt 
+			SET user_avatar = '".$user_avatar."' 
+			WHERE register_user_id = '".$connect->lastInsertId()."'
+			";
+
+			$statement = $connect->prepare($query);
+
+			$statement->execute();
+
+
+			require 'class/class.phpmailer.php';
+			$mail = new PHPMailer;
+			$mail->IsSMTP();
+			$mail->Host = 'smtp.gmail.com';
+			$mail->Port = '80';
+			$mail->SMTPAuth = true;
+			$mail->Username = 'parjanya.cs19@bmsce.ac.in';
+			$mail->Password = 'WinMac@2021bmsce';
+			$mail->SMTPSecure = '';
+			$mail->From = 'parjanya.cs19@bmsce.ac.in';
+			$mail->FromName = 'Webslesson';
+			$mail->AddAddress($email);
+			$mail->WordWrap = 50;
+			$mail->IsHTML(true);
+			$mail->Subject = 'Verification code for Verify Your Email Address';
+
+			$message_body = '
+			<p>For verify your email address, enter this verification code when prompted: <b>'.$user_otp.'</b>.</p>
+			<p>Sincerely,</p>
+			';
+			$mail->Body = $message_body;
+
+			if($mail->Send())
+			{
+				echo '<script>alert("Please Check Your Email for Verification Code")</script>';
+
+				header('location:email_verify.php?code='.$user_activation_code);
+			}
+			else
+			{
+				$message = $mail->ErrorInfo;
+			}
+		}
+
+	}
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
