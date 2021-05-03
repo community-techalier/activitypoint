@@ -1,6 +1,7 @@
 <?php
 include 'config.php';
 $msg="";
+$usnexist="";
 
 if(isset($_POST['submit']))
 {
@@ -16,6 +17,7 @@ if(isset($_POST['submit']))
     if($check>0)
     {
       echo "USN already registered";
+      $usnexist="USN already registered";
 
     }
     else{
@@ -157,8 +159,7 @@ function smtp_mailer($to,$subject,$msg)
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
               <h1 class="text-white">Create an account</h1>
-              <p class="text-lead text-white">Use these awesome forms to login or create new account in your project for
-                free.</p>
+              <p class="text-lead text-white">Use this portal to keep track of the activity points!</p>
             </div>
           </div>
         </div>
@@ -178,6 +179,12 @@ function smtp_mailer($to,$subject,$msg)
           <div class="card bg-secondary border border-soft">
             <div class="card-body px-lg-5 py-lg-5">
               <form autocomplete="off" method="POST" onsubmit="return checkPassword(this)">
+              
+              <div  class="text-muted text-center">
+                   <?php
+                    echo $usnexist;
+                    ?>
+                    </div>
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
                     <div class="input-group-prepend">
@@ -185,10 +192,6 @@ function smtp_mailer($to,$subject,$msg)
                     </div>
                     <input autocomplete="off" class="form-control" name="namec" placeholder="Name" type="text" required>
                   </div>
-                  <div class="text-muted " id="pass_color"><small><span class="font-weight-bold">
-                        <?php echo $error_usn; ?>
-                      </span></small></div>
-                </div>
 
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
@@ -245,7 +248,7 @@ function smtp_mailer($to,$subject,$msg)
                 <div class="text-center">
                   <button type="submit" name="submit" class="btn btn-primary mt-4">Create account</button>
                 </div>
-                <div>
+                <div  class="text-muted text-center">
                    <?php
                     echo $msg;
                     ?>

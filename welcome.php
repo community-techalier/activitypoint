@@ -45,7 +45,7 @@
           </div>
           <!-- Navbar links -->
           <ul class="navbar-nav align-items-center  ml-auto ">
-            <a href="/register.html" target="_blank" class="btn btn-md btn-secondary animate-up-2"><i class="ni ni-user-run"></i> Logout</a>
+            <a href="/index.html" target="_blank" class="btn btn-md btn-secondary animate-up-2"><i class="ni ni-user-run"></i> Logout</a>
             
            
             
