@@ -16,7 +16,6 @@ if(isset($_POST['submit']))
 
     if($check>0)
     {
-      echo "USN already registered";
       $usnexist="USN already registered";
 
     }
