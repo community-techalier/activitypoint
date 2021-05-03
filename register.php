@@ -47,14 +47,14 @@ function smtp_mailer($to,$subject,$msg)
 
     $mail -> SMTPSecure = 'TLS';
 
-    $mail -> Host ='smtp.mail.eu-west-1.awsapps.com';
-    $mail -> Port = 465;
+    $mail -> Host ='smtp.gmail.com';
+    $mail -> Port = 587;
     
     $mail -> IsHTML(true);
     $mail -> CharSet ='UTF-8';
-    $mail -> Username ="activityportal";
-    $mail -> Password ="WinMac@2020";
-    $mail -> SetFrom("activityportal@techalier.com");
+    $mail -> Username ="techalierindia@gmail.com";
+    $mail -> Password ="tECHALIER@2021";
+    $mail -> SetFrom("techalierindia@gmail.com");
     $mail -> Subject =$subject;
     $mail -> Body =$msg;
     $mail -> AddAddress($to);
