@@ -243,7 +243,7 @@ function smtp_mailer($to,$subject,$msg)
                       class="font-weight-bold"></span></small></div>
 
                 <div class="text-center">
-                  <button type="submit" name="register" class="btn btn-primary mt-4">Create account</button>
+                  <button type="submit" name="submit" class="btn btn-primary mt-4">Create account</button>
                 </div>
                 <div>
                    <?php
