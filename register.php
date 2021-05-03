@@ -52,7 +52,7 @@ function smtp_mailer($to,$subject,$msg)
     
     $mail -> IsHTML(true);
     $mail -> CharSet ='UTF-8';
-    $mail -> Username ="activityportal@techalier.com";
+    $mail -> Username ="activityportal";
     $mail -> Password ="WinMac@2020";
     $mail -> SetFrom("activityportal@techalier.com");
     $mail -> Subject =$subject;
