@@ -1,5 +1,5 @@
 <?php
-   include("log1.php");
+   include("login.php");
    
    
    $user_check = $_SESSION['login_user'];
@@ -16,7 +16,7 @@
    $login_session = $row['usn'];
    
    if(!isset($_SESSION['login_user'])){
-      header("location:log1.php");
+      header("location:login.php");
       die();
    }
 ?>
